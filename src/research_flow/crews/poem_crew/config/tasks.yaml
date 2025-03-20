@@ -1,0 +1,24 @@
+research_task:
+  description: >
+    Research this topic thoroughly: {topic}
+    Follow these steps:
+        1. Find reliable sources and latest information
+        2. Extract key details and evidence
+        3. Verify information across sources
+        4. Document findings with references
+  expected_output: >
+    Detailed research findings with sources
+  agent: researcher
+
+write_report_task:
+  description: >
+    Create a clear report on research findings:
+        Include:
+        - Executive Summary
+        - Key Findings
+        - Evidence
+        - Conclusions
+        - References
+  expected_output: >
+    A three page Structured report with insights
+  agent: report_writer
