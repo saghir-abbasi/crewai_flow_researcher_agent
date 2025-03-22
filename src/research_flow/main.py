@@ -25,7 +25,7 @@ class PoemFlow(Flow[PoemState]):
         print("Saving....")
         return {"research" : self.state.research}
 
-def kickoff(topic="Robotics") -> str:
+def kickoff(topic: str) -> str:
     PoemFlow(topic=topic).kickoff()
 
 def plot():
