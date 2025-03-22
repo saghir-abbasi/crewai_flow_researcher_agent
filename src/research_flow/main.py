@@ -10,10 +10,6 @@ class PoemState(BaseModel):
 
 class PoemFlow(Flow[PoemState]):
     @start()
-    def generate_topic(self):
-        self.state.topic = 'Impact of AI in Education Sector'
-
-    @listen(generate_topic)
     def generate_research(self):
         print("Generating research")
         result = (
@@ -27,12 +23,10 @@ class PoemFlow(Flow[PoemState]):
     @listen(generate_research)
     def save_research(self):
         print("Saving....")
-        return {"research" : self.state.research, "topic": self.state.topic}
+        return {"research" : self.state.research}
 
-def kickoff():
-    poem_flow = PoemFlow()
-    poem_flow.kickoff()
-
+def kickoff(topic="Robotics") -> str:
+    PoemFlow(topic=topic).kickoff()
 
 def plot():
     poem_flow = PoemFlow()

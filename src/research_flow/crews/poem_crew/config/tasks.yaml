@@ -20,5 +20,5 @@ write_report_task:
         - Conclusions
         - References
   expected_output: >
-    A three page Structured report with insights
+    A two page Structured report with insights
   agent: report_writer
